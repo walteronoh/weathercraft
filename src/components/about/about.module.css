@@ -1,0 +1,19 @@
+.about {
+    width: 100vw;
+    height: 100vh;
+}
+
+.about_titles {
+    padding-top: calc(100vh * 0.4);
+    padding-left: calc(100vw * 0.05);
+}
+
+.about_intro {
+    font-size: xx-large;
+    font-weight: 300;
+}
+
+.about_roles{
+    font-size: x-large;
+    font-weight: 100;
+}

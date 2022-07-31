@@ -1,0 +1,39 @@
+.navbar {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    padding: 20px;
+    top: 0;
+    /* background-color: red; */
+}
+
+.navbar_icon{
+    /* background-color: blue; */
+    padding: 0;
+}
+
+.navbar_titles {
+    display: flex;
+    justify-content: flex-end;
+    flex: auto;
+    /* background-color: blue; */
+}
+
+.navbar_titles ul {
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+}
+
+.navbar_titles ul li{
+    padding-right: calc(100vw * 0.05);
+    vertical-align: middle;
+    font-size: large;
+    font-weight: 500;
+    margin: 0 auto;
+    transition: all .2s ease-in-out; 
+}
+
+.navbar_titles ul li:hover {
+    transform: scale(1.2); 
+}
