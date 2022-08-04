@@ -13,7 +13,7 @@ export default function About() {
         <div className={styles.about}>
             <main>
                 <div className={styles.about_titles}>
-                    <p className={styles.about_intro}>Hi, I'm Walter Kiprono.</p>
+                    <p className={styles.about_intro}>Hi, I&apos;m Walter Kiprono.</p>
                     <p className={styles.about_roles}><ReactTyped strings={words} typeSpeed={100} backSpeed={100} loop/></p>
                 </div>
             </main>
