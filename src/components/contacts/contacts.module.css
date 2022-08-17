@@ -3,3 +3,56 @@
     height: 100vh;
     padding-top: 4rem;
 }
+
+.contacts main {
+    position: relative;
+    margin: 0 auto;
+    width: 70vw;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contacts_grid ul {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+.contacts_grid .contacts_info li {
+    padding: 1rem;
+}
+
+.contacts_form {
+    display: flex;
+    flex: auto;
+}
+
+.contacts_grid .contacts_form li {
+    position: relative;
+    padding: 0 0 1rem 1rem;
+}
+
+.contacts_form_label {
+    font-size: medium;
+}
+
+.contacts_form_msg{
+    resize: none;
+    border-radius: 30px;
+    width: 40vw;
+    height: 20vh;
+    background: transparent;
+    padding: 1rem;
+}
+
+.contacts_form_btn {
+    position: absolute;
+    right: 0;
+    width: 40%;
+    padding: 1.5rem;
+    border-radius: 30px;
+    background: transparent;
+    border: 1px solid white;
+    font-size: large;
+}

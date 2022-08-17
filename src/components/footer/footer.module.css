@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer ul {
+    display: flex;
+    list-style: none;
+}
+
+.footer ul li {
+    padding: 1rem;
+}
+
+.footer ul li:hover {
+    transform: scale(1.5);
+}

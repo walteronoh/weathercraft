@@ -6,6 +6,7 @@ import Contacts from '../components/contacts/contacts'
 import NavBar from '../components/navbar/navbar'
 import Skills from '../components/skills/skills'
 import Work from '../components/work/work'
+import Footer from '../components/footer/footer'
 // import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 
@@ -110,6 +111,7 @@ export default function Home() {
       <div ref={contactsRef}>
         <Contacts />
       </div>
+      <Footer />
     </div>
   )
 }
