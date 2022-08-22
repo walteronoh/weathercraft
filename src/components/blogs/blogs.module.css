@@ -1,5 +1,31 @@
 .topics {
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     padding-top: 4rem;
+}
+
+.topics main {
+    position: relative;
+}
+
+.article {
+    margin: 1rem auto;
+    width: 70vw;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+
+.readmore_btn {
+    cursor: pointer;
+    padding: 12px;
+}
+
+.readmore_btn:hover {
+    font-size: 110%;
 }

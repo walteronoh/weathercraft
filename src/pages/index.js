@@ -30,11 +30,11 @@ export default function Home() {
     key: 2
   },
   {
-    name: "Blog",
+    name: "Portfolio",
     key: 3
   },
   {
-    name: "Portfolio",
+    name: "Blog",
     key: 4
   },
   {
@@ -54,11 +54,11 @@ export default function Home() {
         break;
 
       case 3:
-        scroll(topicsRef);
+        scroll(workRef);
         break;
 
       case 4:
-        scroll(workRef);
+        scroll(topicsRef);
         break;
 
       case 5:
@@ -73,13 +73,13 @@ export default function Home() {
       if (scrollY >= 0 && scrollY < skillsRef.current.offsetTop) {
         setActiveTabKey(1);
       }
-      else if (scrollY >= skillsRef.current.offsetTop && scrollY < topicsRef.current.offsetTop) {
+      else if (scrollY >= skillsRef.current.offsetTop && scrollY < workRef.current.offsetTop) {
         setActiveTabKey(2);
       }
-      else if (scrollY >= topicsRef.current.offsetTop && scrollY < workRef.current.offsetTop) {
+      else if (scrollY >= workRef.current.offsetTop && scrollY < topicsRef.current.offsetTop) {
         setActiveTabKey(3);
       }
-      else if (scrollY >= workRef.current.offsetTop && scrollY < contactsRef.current.offsetTop) {
+      else if (scrollY >= topicsRef.current.offsetTop && scrollY < contactsRef.current.offsetTop) {
         setActiveTabKey(4);
       }
       else if (scrollY >= contactsRef.current.offsetTop) {
@@ -102,11 +102,11 @@ export default function Home() {
       <div ref={skillsRef}>
         <Skills />
       </div>
-      <div ref={topicsRef}>
-        <Topics />
-      </div>
       <div ref={workRef}>
         <Work />
+      </div>
+      <div ref={topicsRef}>
+        <Topics />
       </div>
       <div ref={contactsRef}>
         <Contacts />
