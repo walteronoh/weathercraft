@@ -1,11 +1,14 @@
 .topics {
-    width: 100vw;
     /* height: 100vh; */
     padding-top: 4rem;
 }
 
 .topics main {
     position: relative;
+}
+
+.topics header {
+    text-align: center;
 }
 
 .article {

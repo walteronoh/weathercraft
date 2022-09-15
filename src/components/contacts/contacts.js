@@ -26,7 +26,7 @@ export default function Contacts() {
                         <li>
                             <li><label className={styles.contacts_form_label}>Message.</label></li>
                             <li><textarea className={styles.contacts_form_msg} placeholder="Write your message..."></textarea></li>
-                            <li><input type="button" value="Send" className={styles.contacts_form_btn}/></li>
+                            <li><input type="button" value="Send" onClick={() => alert("Feature under development.")} className={styles.contacts_form_btn}/></li>
                         </li>
                     </ul>
                 </div>

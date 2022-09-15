@@ -1,7 +1,10 @@
 .contacts {
-    width: 100vw;
     height: 100vh;
     padding-top: 4rem;
+}
+
+.contacts header {
+    text-align: center;
 }
 
 .contacts main {

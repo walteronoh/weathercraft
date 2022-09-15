@@ -3,10 +3,10 @@ import styles from "./about.module.css";
 
 export default function About() {
     const words = [
-        'React Developer',
-        'Vue Developer',
-        'Flutter Developer',
-        'Node Developer'
+        'React',
+        'Vue',
+        'Flutter',
+        'Node'
     ];
 
     return (
@@ -14,7 +14,7 @@ export default function About() {
             <main>
                 <div className={styles.about_titles}>
                     <p className={styles.about_intro}>Hi, I&apos;m Walter Kiprono.</p>
-                    <p className={styles.about_roles}><ReactTyped strings={words} typeSpeed={100} backSpeed={100} loop/></p>
+                    <p className={styles.about_roles}>Tag me on <ReactTyped strings={words} typeSpeed={100} backSpeed={100} loop/> Projects.</p>
                 </div>
             </main>
         </div>

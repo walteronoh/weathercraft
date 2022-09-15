@@ -1,11 +1,10 @@
 .about {
-    width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
+    text-align: center;
 }
 
 .about_titles {
     padding-top: calc(100vh * 0.4);
-    padding-left: calc(100vw * 0.05);
 }
 
 .about_intro {
