@@ -40,6 +40,14 @@
     font-size: medium;
 }
 
+.contacts_form_error_label {
+    color: #FF6347;
+}
+
+.contacts_form_success_label {
+    color: #26f906;
+}
+
 .contacts_form_msg{
     resize: none;
     border-radius: 30px;
@@ -58,4 +66,8 @@
     background: transparent;
     border: 1px solid white;
     font-size: large;
+}
+
+.contacts_form_btn:active {
+    background: rgb(99, 81, 81);
 }

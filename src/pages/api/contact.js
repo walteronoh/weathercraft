@@ -4,8 +4,8 @@ import { sendMail } from "../../utils/mail"
 
 export default function handler(req, res) {
   try {
-    sendMail({ test: 'test' }).then((resp) => {
-      res.status(200).json({ name: 'John Doe' })
+    sendMail(req.body).then((resp) => {
+      res.status(200).json({ message: "Message Sent"});
     }).catch((err) => {
       res.status(400).json(err);
     })

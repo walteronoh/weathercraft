@@ -2,29 +2,26 @@ const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
     port: 465,
-    host: "walterkiprono.com",
+    host: "nasiroke.com",
     auth: {
-        // user: process.env.EMAILUSERNAME,
-        // pass: process.env.EMAILPASSWORD,
-        user: 'contact@walterkiprono.com',
-        pass: 'P@$$w0rdFour321'
+        user: process.env.EMAIL_USERNAME,
+        pass: process.env.EMAIL_PASSWORD
     },
-    secure: false, // upgrades later with STARTTLS -- change this based on the PORT
+    secure: true, // upgrades later with STARTTLS -- change this based on the PORT
 });
 
 const sendMail = async (body) => {
     return new Promise((resolve, reject) => {
-        const { to, cc, subject, text } = body;
+        const { text } = body;
         const mailData = {
-            from: '<contact@walterkiprono.com>',
-            to: 'walterkiprono81@gmail.com',
-            cc: cc ? cc : '',
-            subject: 'Test',
-            text: 'Hello Walter',
+            from: '<contact@nasiroke.com>',
+            to: 'contact@walterkiprono.com',
+            subject: 'Get In Touch',
+            text: text,
         };
         transporter.sendMail(mailData, (err, info) => {
             if (err) reject(err);
-            resolve({ message: "Mail Sent Successfully" });
+            resolve(info);
         });
     });
 }
