@@ -1,6 +1,4 @@
-.cloudy {
-  color: white;
-  background-image: url('/images/normal_evening.jpg');
+.background {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

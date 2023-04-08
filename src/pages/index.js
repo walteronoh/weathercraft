@@ -16,12 +16,13 @@ export default function Home() {
   const utils = new Utils();
   const [activeTabKey, setActiveTabKey] = React.useState(1);
   const [currentWeather, setCurrentWeather] = React.useState("");
+  const [weatherInfo, setWeatherInfo] = React.useState(null);
 
   React.useEffect(() => {
     getCurrentWeather().then((response) => {
       let weather = response.weather[0].main;
-      console.log(utils.getWeatherInfo(weather));
       setCurrentWeather(weather);
+      setWeatherInfo(utils.getWeatherInfo(weather));
     })
   }, []);
 
@@ -51,7 +52,7 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.cloudy}>
+    <div style={weatherInfo && weatherInfo.style} className={styles.background}>
       <Head>
         <title>Walter Kiprono</title>
         <meta name="description" content="Walter Kiprono Portfolio" />
@@ -73,7 +74,7 @@ export default function Home() {
       {activeTabKey == 5 && <div>
         <Contacts />
       </div>}
-      <Footer />
+      { weatherInfo && <Footer accredit={weatherInfo.alt}/>}
     </div>
   )
 }

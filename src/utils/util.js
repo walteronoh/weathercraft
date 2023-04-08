@@ -6,21 +6,6 @@ export default class Utils {
         return weatherText;
     }
 
-    getSuitableImage(daytime) {
-        switch (daytime) {
-            case 'morning':
-                return "";
-            case 'afternoon':
-                return ""
-            case 'evening':
-                return ""
-            case 'night':
-                return ""
-            default:
-                return ""
-        }
-    }
-
     getTimeOfDay() {
         let now = moment();
         let hour = now.hour();
@@ -122,7 +107,7 @@ export default class Utils {
                         style: {
                             backgroundImage: "url('/images/cloudy_evening.jpg')",
                             backgroundSize: "cover",
-                            color: "black",
+                            color: "white",
                         },
                         alt: 'Photo by <a href="https://unsplash.com/@redreamer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Wendy Bandurski-Miller</a> on <a href="https://unsplash.com/images/nature/cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
                     }
@@ -133,7 +118,7 @@ export default class Utils {
                         style: {
                             backgroundImage: "url('/images/cloudy_night.jpg')",
                             backgroundSize: "cover",
-                            color: "",
+                            color: "white",
                         },
                         alt: 'Photo by <a href="https://unsplash.com/@magnusostberg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Magnus Östberg</a> on <a href="https://unsplash.com/photos/YKzzRSRCOWQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
                     }
