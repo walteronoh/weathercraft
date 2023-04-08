@@ -8,19 +8,22 @@ import Skills from '../components/skills/skills'
 import Work from '../components/work/work'
 import Footer from '../components/footer/footer'
 // import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
+import { getCurrentWeather } from '../services/services'
+import Utils from '../utils/util'
 
 export default function Home() {
-  const aboutRef = React.useRef(null);
-  const skillsRef = React.useRef(null);
-  const topicsRef = React.useRef(null);
-  const workRef = React.useRef(null);
-  const contactsRef = React.useRef(null);
+  const utils = new Utils();
   const [activeTabKey, setActiveTabKey] = React.useState(1);
+  const [currentWeather, setCurrentWeather] = React.useState("");
 
-  const scroll = (ref) => ref.current.scrollIntoView({
-    behaviour: "smooth"
-  });
+  React.useEffect(() => {
+    getCurrentWeather().then((response) => {
+      let weather = response.weather[0].main;
+      console.log(utils.getWeatherInfo(weather));
+      setCurrentWeather(weather);
+    })
+  }, []);
 
   const tabs = [{
     name: "About",
@@ -44,73 +47,32 @@ export default function Home() {
   ];
 
   const scrollToContent = (key) => {
-    switch (key) {
-      case 1:
-        scroll(aboutRef);
-        break;
-
-      case 2:
-        scroll(skillsRef);
-        break;
-
-      case 3:
-        scroll(workRef);
-        break;
-
-      case 4:
-        scroll(topicsRef);
-        break;
-
-      case 5:
-        scroll(contactsRef);
-        break;
-    }
+    setActiveTabKey(key);
   }
 
-  React.useEffect(() => {
-    window.addEventListener('scroll', (e) => {
-      let scrollY = window.scrollY;
-      if (scrollY >= 0 && scrollY < skillsRef.current.offsetTop) {
-        setActiveTabKey(1);
-      }
-      else if (scrollY >= skillsRef.current.offsetTop && scrollY < workRef.current.offsetTop) {
-        setActiveTabKey(2);
-      }
-      else if (scrollY >= workRef.current.offsetTop && scrollY < topicsRef.current.offsetTop) {
-        setActiveTabKey(3);
-      }
-      else if (scrollY >= topicsRef.current.offsetTop && scrollY < contactsRef.current.offsetTop) {
-        setActiveTabKey(4);
-      }
-      else if (scrollY >= contactsRef.current.offsetTop) {
-        setActiveTabKey(5);
-      }
-    })
-  }, []);
-
   return (
-    <div>
+    <div className={styles.cloudy}>
       <Head>
         <title>Walter Kiprono</title>
         <meta name="description" content="Walter Kiprono Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar scrollToContent={scrollToContent} tabs={tabs} activeTabKey={activeTabKey} />
-      <div ref={aboutRef}>
-        <About />
-      </div>
-      <div ref={skillsRef}>
+      {(activeTabKey == 1 && currentWeather) && <div>
+        <About current_weather={currentWeather} />
+      </div>}
+      {activeTabKey == 2 && <div>
         <Skills />
-      </div>
-      <div ref={workRef}>
+      </div>}
+      {activeTabKey == 3 && <div>
         <Work />
-      </div>
-      <div ref={topicsRef}>
+      </div>}
+      {activeTabKey == 4 && <div>
         <Topics />
-      </div>
-      <div ref={contactsRef}>
+      </div>}
+      {activeTabKey == 5 && <div>
         <Contacts />
-      </div>
+      </div>}
       <Footer />
     </div>
   )

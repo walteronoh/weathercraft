@@ -4,6 +4,7 @@
     width: 100vw;
     padding: 20px;
     top: 0;
+    z-index: 100;
     /* background-color: red; */
 }
 

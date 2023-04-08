@@ -3,6 +3,24 @@
     text-align: center;
 }
 
+.about_tag {
+    position: fixed;
+    font-family: 'Apple Chancery', cursive;
+    width: 70vw;
+    font-size: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: calc(100vh * 0.2);
+}
+
+.about_tag p::before {
+    content: open-quote;
+}
+
+.about_tag p::after {
+    content: close-quote;
+}
+
 .about_titles {
     padding-top: calc(100vh * 0.4);
 }
@@ -12,7 +30,7 @@
     font-weight: 300;
 }
 
-.about_roles{
+.about_roles {
     font-size: x-large;
     font-weight: 100;
 }

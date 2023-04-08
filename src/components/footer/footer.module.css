@@ -1,17 +1,28 @@
 .footer {
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .footer ul {
     display: flex;
+    justify-content: center;
     list-style: none;
 }
 
 .footer ul li {
-    padding: 1rem;
+    padding: 0 10px 0 10px;
 }
 
 .footer ul li:hover {
     transform: scale(1.5);
+}
+
+.footer p {
+    display: flex;
+    justify-content: center;
+    list-style: none;
 }

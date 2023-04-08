@@ -1,5 +1,5 @@
 import React from "react";
-import { sendMailService } from "../../services/contacts";
+import { sendMailService } from "../../services/services";
 import styles from "./contacts.module.css";
 
 export default function Contacts() {
