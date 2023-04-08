@@ -9,7 +9,7 @@ export default function Footer(props) {
                 <li><a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/walter-kiprono-4212381a0/'><Image src="/images/linkedin.png" height={20} width={20} alt="LinkedIn icon" /></a></li>
                 <li><a target="_blank" rel="noreferrer" href='https://github.com/walteronoh'><Image src="/images/github-light.png" height={20} width={20} alt="Github icon" /></a></li>
             </ul>
-            <p>{props.accredit}</p>
+            {props.accredit}
         </footer>
     )
 }

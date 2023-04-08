@@ -7,8 +7,8 @@ const getUserLocation = async () => {
     return fetch(url).then(response => response.json());
 }
 
-const getCurrentWeather = async () => {
-    let url = process.env.NEXT_PUBLIC_WEATHER_URL + "?lat=-1.2841&lon=36.8155&appid=" + process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+const getCurrentWeather = async (coordinates) => {
+    let url = process.env.NEXT_PUBLIC_WEATHER_URL + `?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=` + process.env.NEXT_PUBLIC_WEATHER_API_KEY;
     return fetch(url).then((response) => response.json());
 }
 

@@ -9,7 +9,7 @@ import Work from '../components/work/work'
 import Footer from '../components/footer/footer'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { getCurrentWeather } from '../services/services'
+import { getCurrentWeather, getUserLocation } from '../services/services'
 import Utils from '../utils/util'
 
 export default function Home() {
@@ -19,10 +19,16 @@ export default function Home() {
   const [weatherInfo, setWeatherInfo] = React.useState(null);
 
   React.useEffect(() => {
-    getCurrentWeather().then((response) => {
-      let weather = response.weather[0].main;
-      setCurrentWeather(weather);
-      setWeatherInfo(utils.getWeatherInfo(weather));
+    getUserLocation().then((resp) => {
+      let coordinates = {
+        lat: resp.lat,
+        lon: resp.lon
+      }
+      getCurrentWeather(coordinates).then((response) => {
+        let weather = response.weather[0].main;
+        setCurrentWeather(weather);
+        setWeatherInfo(utils.getWeatherInfo(weather));
+      });
     })
   }, []);
 
@@ -52,7 +58,7 @@ export default function Home() {
   }
 
   return (
-    <div style={weatherInfo && weatherInfo.style} className={styles.background}>
+    <div style={weatherInfo ? weatherInfo.style : {}} className={styles.background}>
       <Head>
         <title>Walter Kiprono</title>
         <meta name="description" content="Walter Kiprono Portfolio" />
@@ -74,7 +80,7 @@ export default function Home() {
       {activeTabKey == 5 && <div>
         <Contacts />
       </div>}
-      { weatherInfo && <Footer accredit={weatherInfo.alt}/>}
+      {weatherInfo && <Footer accredit={weatherInfo.alt} />}
     </div>
   )
 }

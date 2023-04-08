@@ -41,7 +41,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/it/@ak1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anna Atkins</a> on <a href="https://unsplash.com/photos/rNBaaxyeWWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/it/@ak1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anna Atkins</a> on <a href="https://unsplash.com/photos/rNBaaxyeWWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else if (dt == 'afternoon') {
@@ -52,7 +52,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/fr/@livvie_bruce?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Liv Bruce</a> on <a href="https://unsplash.com/photos/8yt8kBuEqok?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/fr/@livvie_bruce?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Liv Bruce</a> on <a href="https://unsplash.com/photos/8yt8kBuEqok?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else if (dt == 'evening') {
@@ -63,7 +63,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/ja/@myr0326?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">natsuki</a> on <a href="https://unsplash.com/photos/4DsowKunk84?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/ja/@myr0326?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">natsuki</a> on <a href="https://unsplash.com/photos/4DsowKunk84?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else {
@@ -74,7 +74,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/es/@zhenhappy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">PAN XIAOZHEN</a> on <a href="https://unsplash.com/photos/OKlo0r3gBcQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/es/@zhenhappy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">PAN XIAOZHEN</a> on <a href="https://unsplash.com/photos/OKlo0r3gBcQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 break;
@@ -87,7 +87,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@tadej?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tadej Skofic</a> on <a href="https://unsplash.com/photos/VWxiaKn-lVc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@tadej?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tadej Skofic</a> on <a href="https://unsplash.com/photos/VWxiaKn-lVc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else if (dt == 'afternoon') {
@@ -98,7 +98,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "black",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/de/@carminesavarese?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Carmine Savarese</a> on <a href="https://unsplash.com/images/nature/cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/de/@carminesavarese?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Carmine Savarese</a> on <a href="https://unsplash.com/images/nature/cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else if (dt == 'evening') {
@@ -109,7 +109,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@redreamer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Wendy Bandurski-Miller</a> on <a href="https://unsplash.com/images/nature/cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@redreamer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Wendy Bandurski-Miller</a> on <a href="https://unsplash.com/images/nature/cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else {
@@ -120,7 +120,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@magnusostberg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Magnus Östberg</a> on <a href="https://unsplash.com/photos/YKzzRSRCOWQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@magnusostberg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Magnus Östberg</a> on <a href="https://unsplash.com/photos/YKzzRSRCOWQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 break;
@@ -133,7 +133,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@adriel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Adriel Kloppenburg</a> on <a href="https://unsplash.com/photos/xP-CAEWg4RI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@adriel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Adriel Kloppenburg</a> on <a href="https://unsplash.com/photos/xP-CAEWg4RI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else if (dt == 'afternoon') {
@@ -144,7 +144,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "black",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@dianealkier?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Diane Alkier</a> on <a href="https://unsplash.com/photos/JkEqjCyLLUY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@dianealkier?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Diane Alkier</a> on <a href="https://unsplash.com/photos/JkEqjCyLLUY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else if (dt == 'evening') {
@@ -155,7 +155,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@ahmetozer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ahmet engineer</a> on <a href="https://unsplash.com/photos/G2HcT8B6yyg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@ahmetozer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ahmet engineer</a> on <a href="https://unsplash.com/photos/G2HcT8B6yyg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else {
@@ -166,7 +166,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@nevenkrcmarek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Neven Krcmarek</a> on <a href="https://unsplash.com/photos/3ym-ev0Pe58?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@nevenkrcmarek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Neven Krcmarek</a> on <a href="https://unsplash.com/photos/3ym-ev0Pe58?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 break;
@@ -179,7 +179,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "black",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@davealmine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dawid Zawiła</a> on <a href="https://unsplash.com/photos/-G3rw6Y02D0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@davealmine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dawid Zawiła</a> on <a href="https://unsplash.com/photos/-G3rw6Y02D0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else if (dt == 'afternoon') {
@@ -190,7 +190,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "black",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@_nickwright_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nick Wright</a> on <a href="https://unsplash.com/photos/d1Zx5Q6Ep3k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@_nickwright_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nick Wright</a> on <a href="https://unsplash.com/photos/d1Zx5Q6Ep3k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else if (dt == 'evening') {
@@ -201,7 +201,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@thezenoeffect?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shyam</a> on <a href="https://unsplash.com/photos/mhKKPSzSkE8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@thezenoeffect?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shyam</a> on <a href="https://unsplash.com/photos/mhKKPSzSkE8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
                 else {
@@ -212,7 +212,7 @@ export default class Utils {
                             backgroundSize: "cover",
                             color: "white",
                         },
-                        alt: 'Photo by <a href="https://unsplash.com/@straz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jim Strasma</a> on <a href="https://unsplash.com/photos/byEklXCLOyA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+                        alt: <p>Photo by <a href="https://unsplash.com/@straz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jim Strasma</a> on <a href="https://unsplash.com/photos/byEklXCLOyA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
                     }
                 }
         }
