@@ -9,7 +9,7 @@ import Work from '../components/work/work'
 import Footer from '../components/footer/footer'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { getCurrentWeather, getUserLocation } from '../services/services'
+import { getCurrentWeather, getUserLocationGeoAPIfy } from '../services/services'
 import Utils from '../utils/util'
 
 export default function Home() {
@@ -19,10 +19,10 @@ export default function Home() {
   const [weatherInfo, setWeatherInfo] = React.useState(null);
 
   React.useEffect(() => {
-    getUserLocation().then((resp) => {
+    getUserLocationGeoAPIfy().then((resp) => {
       let coordinates = {
-        lat: resp.lat,
-        lon: resp.lon
+        lat: resp.location.latitude,
+        lon: resp.location.longitude
       }
       getCurrentWeather(coordinates).then((response) => {
         let weather = response.weather[0].main;

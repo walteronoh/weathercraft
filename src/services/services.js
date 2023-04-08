@@ -12,4 +12,9 @@ const getCurrentWeather = async (coordinates) => {
     return fetch(url).then((response) => response.json());
 }
 
-export { sendMailService, getUserLocation, getCurrentWeather }
+const getUserLocationGeoAPIfy = async () => {
+    let url = "https://api.geoapify.com/v1/ipinfo?&apiKey=" + process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY;
+    return fetch(url).then((response) => response.json());
+}
+
+export { sendMailService, getUserLocation, getCurrentWeather, getUserLocationGeoAPIfy }
