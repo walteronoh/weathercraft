@@ -1,11 +1,15 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from "./navbar.module.css";
-import { getUserLocation } from '../../services/services';
+import { getUserLocationGeoAPIfy } from '../../services/services';
+import SideNav from '../sidenav/sidenav';
 
 export default function NavBar(props) {
     const [activeTab, setActiveTab] = React.useState(1);
-    const [locationInfo, setLocationInfo] = React.useState({ city: "", country: "", countryCode: ""});
+    const [activeSideNav, setActiveSideNav] = React.useState(false);
+    const [locationInfo, setLocationInfo] = React.useState({ city: "", country: "", countryCode: "" });
+    const [width, setWidth] = React.useState();
+    const [isMobile, setIsMobile] = React.useState(false);
 
     const activateTab = (key) => {
         props.scrollToContent(key);
@@ -15,9 +19,29 @@ export default function NavBar(props) {
     React.useEffect(() => setActiveTab(props.activeTabKey), [props.activeTabKey]);
 
     React.useEffect(() => {
-        getUserLocation().then((response) => {
-            setLocationInfo({ city: response.city, country: response.country, countryCode: response.countryCode });
+        getUserLocationGeoAPIfy().then((response) => {
+            setLocationInfo({ city: response.city.name, country: response.country.name, countryCode: response.country.iso_code });
         });
+    }, []);
+
+    const handleResize = () => {
+        setWidth(window.innerWidth);
+    };
+
+    React.useEffect(() => {
+        if (width >= 320 && width <= 605) {
+            setIsMobile(true);
+        } else {
+            setIsMobile(false);
+        }
+    }, [width])
+
+    React.useEffect(() => {
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
     }, []);
 
     return (
@@ -28,7 +52,9 @@ export default function NavBar(props) {
             <div className={styles.navbar_titles}>
                 <ul>
                     {
-                        props.tabs.map((v) => (<li key={v.key} onClick={() => activateTab(v.key)}>{v.name}{activeTab == v.key ? <hr width="50%" /> : ''}</li>))
+                        isMobile
+                            ? <li><SideNav tabs={props.tabs} isActive={activeSideNav} /></li>
+                            : props.tabs.map((v) => (<li key={v.key} onClick={() => activateTab(v.key)}>{v.name}{activeTab == v.key ? <hr width="50%" /> : ''}</li>))
                     }
                 </ul>
             </div>

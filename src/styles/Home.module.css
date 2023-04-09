@@ -6,17 +6,3 @@
   height: 100vh;
 }
 
-.rainy {
-  color: white;
-  background-image: url('/images/sunset.gif');
-  width: 100%;
-  height: 100%;
-}
-
-.clear {
-  color: white;
-  background-image: url('/images/sunset.gif');
-  width: 100%;
-  height: 100%;
-}
-
