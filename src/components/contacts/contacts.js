@@ -46,7 +46,7 @@ export default function Contacts() {
                         <li>
 
                             <li>Phone</li>
-                            <li>+254 729 795 939</li>
+                            <li>(+254|0) 729 795 939</li>
 
                         </li>
                     </ul>
