@@ -14,7 +14,7 @@ const sendMail = async (body) => {
     return new Promise((resolve, reject) => {
         const { text } = body;
         const mailData = {
-            from: process.env.EMAIL_USERNAME,
+            from: process.env.NEXT_PUBLIC_EMAIL_USERNAME,
             to: process.env.NEXT_PUBLIC_EMAIL_TO,
             subject: 'Get In Touch',
             text: text,
