@@ -2,7 +2,7 @@
 import Cors from "cors";
 import { sendMail } from "../../utils/mail"
 
-const cors = Cors({ origin: "https://www.walterkiprono.com" });
+const cors = Cors({ origin: "*" });
 
 function runMiddleWare(req, res, middleWare) {
   return new Promise((resolve, reject) => {
