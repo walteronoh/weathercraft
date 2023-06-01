@@ -40,7 +40,7 @@ export default function Contacts() {
                         <li>
 
                             <li>Email</li>
-                            <li>walterkiprono.work@outlook.com</li>
+                            <li>hello@walterkiprono.com</li>
 
                         </li>
                         <li>
