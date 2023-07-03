@@ -20,7 +20,7 @@ export default function NavBar(props) {
 
     React.useEffect(() => {
         getUserLocationGeoAPIfy().then((response) => {
-            setLocationInfo({ city: response.city.name, country: response.country.name, countryCode: response.country.iso_code });
+            setLocationInfo({ city: response.city, country: response.country, countryCode: response.country.iso_code });
         });
     }, []);
 
