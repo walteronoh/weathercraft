@@ -1,11 +1,15 @@
-.about {
+
+
+.about{
     /* height: 100vh; */
+    color:white;
     text-align: center;
+    content: "About";
 }
 
 .about_tag {
     position: fixed;
-    font-family: 'Apple Chancery', cursive;
+    font-family: Montserrat;
     width: 70vw;
     font-size: 1.5rem;
     left: 50%;

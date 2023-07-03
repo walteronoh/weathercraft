@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from "./navbar.module.css";
-import { getUserLocationGeoAPIfy } from '../../services/services';
+// import { getUserLocationGeoAPIfy } from '../../services/services';
 import SideNav from '../sidenav/sidenav';
 
 export default function NavBar(props) {
@@ -16,39 +16,39 @@ export default function NavBar(props) {
         setActiveTab(key);
     }
 
-    React.useEffect(() => setActiveTab(props.activeTabKey), [props.activeTabKey]);
+    // React.useEffect(() => setActiveTab(props.activeTabKey), [props.activeTabKey]);
 
-    React.useEffect(() => {
-        getUserLocationGeoAPIfy().then((response) => {
-            setLocationInfo({ city: response.city, country: response.country, countryCode: response.country.iso_code });
-        });
-    }, []);
+    // React.useEffect(() => {
+    //     getUserLocationGeoAPIfy().then((response) => {
+    //         setLocationInfo({ city: response.city.name, country: response.country.name, countryCode: response.country.iso_code });
+    //     });
+    // }, []);
 
-    const handleResize = () => {
-        setWidth(window.innerWidth);
-    };
+    // const handleResize = () => {
+    //     setWidth(window.innerWidth);
+    // };
 
-    React.useEffect(() => {
-        if (width >= 320 && width <= 605) {
-            setIsMobile(true);
-        } else {
-            setIsMobile(false);
-        }
-    }, [width])
+    // React.useEffect(() => {
+    //     if (width >= 320 && width <= 605) {
+    //         setIsMobile(true);
+    //     } else {
+    //         setIsMobile(false);
+    //     }
+    // }, [width])
 
-    React.useEffect(() => {
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, []);
+    // React.useEffect(() => {
+    //     handleResize();
+    //     window.addEventListener('resize', handleResize);
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize)
+    //     }
+    // }, []);
 
     return (
         <div className={styles.navbar}>
-            {/* <Image src="/vercel.svg" height={72} width={72} alt="wk icon" className={styles.navbar_icon} /> */}
+            <Image src="/vercel.svg" height={72} width={72} alt="wk icon" className={styles.navbar_icon} />
             <h1>[WK]</h1>
-            <h4>{locationInfo.city}, {locationInfo.countryCode}</h4>
+            {/* <h4>{locationInfo.city}, {locationInfo.countryCode}</h4> */}
             <div className={styles.navbar_titles}>
                 <ul>
                     {
@@ -60,4 +60,6 @@ export default function NavBar(props) {
             </div>
         </div>
     )
+
+
 }

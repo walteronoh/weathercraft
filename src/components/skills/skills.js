@@ -7,9 +7,9 @@ export default function Skills() {
             <header>
                 <h1>Skills.</h1>
             </header>
-            <main>
+            <main >
                 <p>I like to code things from scratch using the following languages.</p>
-                <div className={styles.icon}>
+                <div className={styles.icon} id="languages-el">
                     <ul>
                         <li><a target="_blank" rel="noreferrer" href='https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics'><Image src="/images/html.png" height={20} width={20} alt="HTML icon" /></a><p>HTML</p></li>
                         <li><a target="_blank" rel="noreferrer" href='https://developer.mozilla.org/en-US/docs/Web/CSS'><Image src="/images/css.png" height={20} width={20} alt="CSS icon" /></a><p>CSS</p></li>

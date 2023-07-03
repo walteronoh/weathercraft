@@ -2,10 +2,12 @@
     position: fixed;
     display: flex;
     width: 100vw;
-    padding: 20px;
+    height:4.8rem;
+    padding: 16px;
     top: 0;
     z-index: 100;
-    /* background-color: red; */
+    overflow-y: scroll;
+    /* background: #001233; */
 }
 
 .navbar_icon{
