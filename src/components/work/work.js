@@ -29,12 +29,12 @@ export default function Work() {
             </header>
             <main>
                 <Carousel showDots={true} responsive={responsive} autoPlay={true} autoPlaySpeed={3000} infinite={true}>
-                    <div> <img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>OneTill Web</a></p></div>
-                    <div><img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>OPRS</a></p></div>
-                    <div> <img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>OneTill Mobile</a></p></div>
-                    <div> <img src="/images/php.png" alt="Twitter icon" width="300" /> <p> <a>NCA Ujenzi Mobile</a></p></div>
-                    <div><img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>NCA</a></p></div>
-                    <div><img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>Freebeings</a></p></div>
+                    <div id="apps"> <img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>OneTill Web</a></p></div>
+                    <div id="apps"><img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>OPRS</a></p></div>
+                    <div id="apps"> <img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>OneTill Mobile</a></p></div>
+                    <div id="apps"> <img src="/images/php.png" alt="Twitter icon" width="300" /> <p> <a>NCA Ujenzi Mobile</a></p></div>
+                    <div id="apps"><img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>NCA</a></p></div>
+                    <div id="apps"><img src="/images/twitter.png" alt="Twitter icon" width="300" /> <p><a>Freebeings</a></p></div>
                     {/* <div>
                         <img src="/images/twitter.png" alt="Twitter icon" width="300" />
                         <p className="legend">Legend 1</p></div>
