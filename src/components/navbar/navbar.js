@@ -15,7 +15,6 @@ export default function NavBar(props) {
         props.scrollToContent(key);
         setActiveTab(key);
     }
-
     // React.useEffect(() => setActiveTab(props.activeTabKey), [props.activeTabKey]);
 
     // React.useEffect(() => {
