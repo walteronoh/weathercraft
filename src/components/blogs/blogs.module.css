@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
 .topics {
+
     /* height: 100vh; */
     padding-top: 4rem;
 }
@@ -20,7 +23,7 @@
 }
 
 .content {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Montserrat;
     font-size: large;
 }
 
