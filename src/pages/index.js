@@ -1,85 +1,84 @@
 import React from 'react'
-import Head from 'next/head'
-import About from '../components/about/about'
-import Topics from '../components/blogs/topics'
-import Contacts from '../components/contacts/contacts'
-import NavBar from '../components/navbar/navbar'
-import Skills from '../components/skills/skills'
-import Work from '../components/work/work'
+import ReactTyped from "react-typed";
+import '@geoapify/geocoder-autocomplete/styles/minimal.css'
 import Footer from '../components/footer/footer'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { getCurrentWeather, getUserLocationGeoAPIfy } from '../services/services'
+import { getCurrentWeather, getPlaceGeoAPIfy, getUserLocationGeoAPIfy } from '../services/services'
 import Utils from '../utils/util'
+let timer;
 
 export default function Home() {
   const utils = new Utils();
-  const [activeTabKey, setActiveTabKey] = React.useState(1);
-  const [currentWeather, setCurrentWeather] = React.useState("");
   const [weatherInfo, setWeatherInfo] = React.useState(null);
+  const [tagText, setTagText] = React.useState("");
+  const [place, setPlace] = React.useState("");
+  const [placesSuggestions, setPlacesSuggestions] = React.useState([]);
 
   React.useEffect(() => {
     getUserLocationGeoAPIfy().then((resp) => {
       let coordinates = {
         lat: resp.location.latitude,
         lon: resp.location.longitude
-      }
-      getCurrentWeather(coordinates).then((response) => {
-        let weather = response.weather[0].main;
-        setCurrentWeather(weather);
-        setWeatherInfo(utils.getWeatherInfo(weather));
-      });
+      };
+      updateWeatherDisplay(coordinates);
     })
   }, []);
 
-  const tabs = [{
-    name: "About",
-    key: 1
-  }, {
-    name: "Skills",
-    key: 2
-  },
-  {
-    name: "Portfolio",
-    key: 3
-  },
-  {
-    name: "Blog",
-    key: 4
-  },
-  {
-    name: "Contacts",
-    key: 5
-  }
-  ];
+  const updateWeatherDisplay = (coordinates, timezone) => {
+    getCurrentWeather(coordinates).then((response) => {
+      let weather = response.weather[0].main;
+      setWeatherInfo(utils.getWeatherInfo(weather, timezone));
+      setTagText(utils.getWeatherText(weather));
+    });
+  };
 
-  const scrollToContent = (key) => {
-    setActiveTabKey(key);
+  const getPlace = () => {
+    if (place.length >= 3) {
+      getPlaceGeoAPIfy(place).then((response) => {
+        let address = [];
+        response.features.map((value) => {
+          address.push({
+            address_line: value.properties.address_line1 + ", " + value.properties.address_line2,
+            timezone: {
+              offset_STD: value.properties.timezone.offset_STD
+            },
+            coordinates: {
+              lat: value.properties.lat,
+              lon: value.properties.lon
+            }
+          });
+        });
+        setPlacesSuggestions(address);
+      });
+    }
+  };
+
+  const debounce = (func) => {
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { func.apply(this, args); }, 1000)
+    };
   }
+
+  const handleChange = (e) => {
+    setPlace(e.target.value);
+    const debouncedGetPlace = debounce(() => getPlace());
+    debouncedGetPlace();
+  };
 
   return (
     <div style={weatherInfo ? weatherInfo.style : {}} className={styles.background}>
-      <Head>
-        <title>Walter Kiprono</title>
-        <meta name="description" content="Walter Kiprono Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <NavBar scrollToContent={scrollToContent} tabs={tabs} activeTabKey={activeTabKey} />
-      {(activeTabKey == 1 && currentWeather) && <div>
-        <About current_weather={currentWeather} />
-      </div>}
-      {activeTabKey == 2 && <div>
-        <Skills />
-      </div>}
-      {activeTabKey == 3 && <div>
-        <Work />
-      </div>}
-      {activeTabKey == 4 && <div>
-        <Topics />
-      </div>}
-      {activeTabKey == 5 && <div>
-        <Contacts />
-      </div>}
+      {/* <p>{tagText && <ReactTyped strings={[tagText]} typeSpeed={40} />}</p> */}
+      <div className={styles.inputs}>
+        <input onChange={handleChange} className={styles.searchInput} type="search" value={place} placeholder="Search place..." />
+        {placesSuggestions.length > 0 &&
+          <ul className={styles.dropdown}>
+            {placesSuggestions.map((value, index) => {
+              return <li key={index} onClick={(e) => updateWeatherDisplay(value.coordinates, value.timezone)}>{value.address_line}</li>
+            })}
+          </ul>}
+      </div>
       {weatherInfo && <Footer accredit={weatherInfo.alt} />}
     </div>
   )

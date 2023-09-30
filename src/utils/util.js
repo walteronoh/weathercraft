@@ -6,8 +6,12 @@ export default class Utils {
         return weatherText;
     }
 
-    getTimeOfDay() {
+    getTimeOfDay(offset_STD) {
+        console.log(offset_STD);
         let now = moment();
+        if (offset_STD) {
+            now = moment().utcOffset(offset_STD);
+        }
         let hour = now.hour();
         let timeOfDay = "";
         if (hour >= 5 && hour < 12) {
@@ -22,8 +26,9 @@ export default class Utils {
         return timeOfDay;
     }
 
-    getWeatherInfo(weather) {
-        let dt = this.getTimeOfDay();
+    getWeatherInfo(weather, timezone) {
+        console.log(timezone);
+        let dt = timezone ? this.getTimeOfDay(timezone.offset_STD) : this.getTimeOfDay();
         let weatherInfo = {
             style: {
                 backgroundImage: "",

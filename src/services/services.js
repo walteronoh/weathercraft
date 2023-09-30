@@ -17,4 +17,9 @@ const getUserLocationGeoAPIfy = async () => {
     return fetch(url).then((response) => response.json());
 }
 
-export { sendMailService, getUserLocation, getCurrentWeather, getUserLocationGeoAPIfy }
+const getPlaceGeoAPIfy = async (name) => {
+    let url = `https://api.geoapify.com/v1/geocode/autocomplete?apiKey=${process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY}&text=${name}&limit=5`;
+    return fetch(url).then((response) => response.json());
+}
+
+export { sendMailService, getUserLocation, getCurrentWeather, getUserLocationGeoAPIfy, getPlaceGeoAPIfy }

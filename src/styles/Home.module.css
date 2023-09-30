@@ -6,3 +6,48 @@
   height: 100vh;
 }
 
+.inputs {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs .searchInput {
+  margin-top: 100px;
+  background-color: rgba(8, 4, 8, 0.411);
+  border: none;
+  padding: 15px;
+  font-size: 20px;
+  /* border-radius: 20px 20px 0px 0px; */
+  font-family: FreeMono, monospace;
+}
+
+.inputs .searchInput:focus {
+  outline: 1px solid rgba(8, 4, 8, 0.311);
+}
+
+.inputs .dropdown {
+  list-style: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(8, 4, 8, 0.311);
+  margin: 0px;
+  padding: 0px;
+  font-family: FreeMono, monospace;
+  /* border-radius: 0px 0px 5px 5px; */
+}
+
+.inputs .dropdown li {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.inputs .dropdown li + li {
+  border-top: 1px solid rgba(8, 4, 8, 0.311);
+}
+
+.inputs .dropdown li:hover {
+  zoom: 1.2;
+}
