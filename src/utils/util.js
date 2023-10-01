@@ -47,7 +47,7 @@ export default class Utils {
         let weatherDescription = {
             description: weather.weather[0].description,
             temperature: weather.main.temp,
-            humidity: weather.main.humidity,
+            humidity: weather.main.humidity + "%",
             pressure: weather.main.pressure,
             speed: weather.wind.speed,
         }

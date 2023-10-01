@@ -93,6 +93,12 @@ export default function Home() {
             <p>{selectedPlace}</p>
             <div className={styles.weatherInfo}>
               <p>{weatherInfo.weatherDescription.description}</p>
+              <div className={styles.weatherReadings}>
+                <div><Image src="/images/thermometer.png" width="30" height="30" /><p>{weatherInfo.weatherDescription.temperature}</p></div>
+                <div><Image src="/images/anenometer.png" width="30" height="30" /><p>{weatherInfo.weatherDescription.speed}</p></div>
+                <div><Image src="/images/hygrometer.png" width="30" height="30" /><p>{weatherInfo.weatherDescription.humidity}</p></div>
+                <div><Image src="/images/barometer.png" width="30" height="30" /><p>{weatherInfo.weatherDescription.pressure}</p></div>
+              </div>
             </div>
             <div className={styles.daylights}>
               <div><Image src="/images/sunrise.png" width="50" height="50" /><p>{weatherInfo.daylight.sunrise}</p></div>

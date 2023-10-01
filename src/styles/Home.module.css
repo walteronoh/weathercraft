@@ -65,6 +65,11 @@
   margin: 5px;
 }
 
+.inputs .card .weatherReadings {
+  display: flex;
+  justify-content: space-between;
+}
+
 .inputs .card .daylights {
   display: flex;
   justify-content: space-between;
