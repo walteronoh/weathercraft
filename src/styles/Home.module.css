@@ -8,7 +8,7 @@
 
 .inputs {
   position: relative;
-  width: fit-content;
+  width: 350px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -44,10 +44,28 @@
   padding: 5px;
 }
 
-.inputs .dropdown li + li {
+.inputs .dropdown li+li {
   border-top: 1px solid rgba(8, 4, 8, 0.311);
 }
 
 .inputs .dropdown li:hover {
-  zoom: 1.2;
+  background-color: #CCC;
+}
+
+.inputs .card {
+  position: relative;
+  margin: 10px;
+  padding: 5px;
+  font-family: FreeMono, monospace;
+  text-align: center;
+}
+
+.inputs .card .weatherInfo {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.inputs .card .daylights {
+  display: flex;
+  justify-content: space-between;
 }
