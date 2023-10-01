@@ -1,8 +1,8 @@
 {
-  "name": "wk-web",
+  "name": "weathercraft",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://walterkiprono.com",
+  "homepage": "",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
