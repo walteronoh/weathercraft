@@ -6,8 +6,15 @@ export default class Utils {
         return weatherText;
     }
 
+    getDayLightTimes(sunriseUnix, sunsetUnix, datetime) {
+        return {
+            sunrise: moment.unix(sunriseUnix).format("hh:mm a"),
+            sunset: moment.unix(sunsetUnix).format("hh:mm a"),
+            time: moment(datetime).format("hh:mm a")
+        }
+    }
+
     getTimeOfDay(offset_STD) {
-        console.log(offset_STD);
         let now = moment();
         if (offset_STD) {
             now = moment().utcOffset(offset_STD);
@@ -23,12 +30,12 @@ export default class Utils {
         } else {
             timeOfDay = 'night'
         }
-        return timeOfDay;
+        return { timeOfDay: timeOfDay, datetime: now };
     }
 
     getWeatherInfo(weather, timezone) {
-        console.log(timezone);
-        let dt = timezone ? this.getTimeOfDay(timezone.offset_STD) : this.getTimeOfDay();
+        let timeOfDay = timezone ? this.getTimeOfDay(timezone.offset_STD) : this.getTimeOfDay();
+        let dt = timeOfDay.timeOfDay;
         let weatherInfo = {
             style: {
                 backgroundImage: "",
@@ -37,7 +44,15 @@ export default class Utils {
             },
             alt: ""
         };
-        switch (weather) {
+        let weatherDescription = {
+            description: weather.weather[0].description,
+            temperature: weather.main.temp,
+            humidity: weather.main.humidity,
+            pressure: weather.main.pressure,
+            speed: weather.wind.speed,
+        }
+        let daylight = this.getDayLightTimes(weather.sys.sunrise, weather.sys.sunset, timeOfDay.datetime);
+        switch (weather.weather[0].main) {
             case 'Rain':
                 if (dt == 'morning') {
                     weatherInfo = {
@@ -221,6 +236,8 @@ export default class Utils {
                     }
                 }
         }
+        weatherInfo.daylight = daylight;
+        weatherInfo.weatherDescription = weatherDescription;
         return weatherInfo;
     }
 

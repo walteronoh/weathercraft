@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactTyped from "react-typed";
-import '@geoapify/geocoder-autocomplete/styles/minimal.css'
 import Footer from '../components/footer/footer'
-// import Image from 'next/image'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { getCurrentWeather, getPlaceGeoAPIfy, getUserLocationGeoAPIfy } from '../services/services'
 import Utils from '../utils/util'
@@ -14,9 +13,11 @@ export default function Home() {
   const [tagText, setTagText] = React.useState("");
   const [place, setPlace] = React.useState("");
   const [placesSuggestions, setPlacesSuggestions] = React.useState([]);
+  const [selectedPlace, setSelectedPlace] = React.useState("");
 
   React.useEffect(() => {
     getUserLocationGeoAPIfy().then((resp) => {
+      setSelectedPlace(resp.state.name + ", " + resp.country.name);
       let coordinates = {
         lat: resp.location.latitude,
         lon: resp.location.longitude
@@ -27,7 +28,7 @@ export default function Home() {
 
   const updateWeatherDisplay = (coordinates, timezone) => {
     getCurrentWeather(coordinates).then((response) => {
-      let weather = response.weather[0].main;
+      let weather = response;
       setWeatherInfo(utils.getWeatherInfo(weather, timezone));
       setTagText(utils.getWeatherText(weather));
     });
@@ -63,9 +64,18 @@ export default function Home() {
 
   const handleChange = (e) => {
     setPlace(e.target.value);
-    const debouncedGetPlace = debounce(() => getPlace());
-    debouncedGetPlace();
+    if (e.target.value != "") {
+      const debouncedGetPlace = debounce(() => getPlace());
+      debouncedGetPlace();
+    } else {
+      setPlacesSuggestions([]);
+    }
   };
+
+  const handleSelect = (value) => {
+    updateWeatherDisplay(value.coordinates, value.timezone);
+    setSelectedPlace(value.address_line);
+  }
 
   return (
     <div style={weatherInfo ? weatherInfo.style : {}} className={styles.background}>
@@ -75,9 +85,22 @@ export default function Home() {
         {placesSuggestions.length > 0 &&
           <ul className={styles.dropdown}>
             {placesSuggestions.map((value, index) => {
-              return <li key={index} onClick={(e) => updateWeatherDisplay(value.coordinates, value.timezone)}>{value.address_line}</li>
+              return <li key={index} onClick={(e) => handleSelect(value)}>{value.address_line}</li>
             })}
           </ul>}
+        {weatherInfo &&
+          <div className={styles.card}>
+            <p>{selectedPlace}</p>
+            <div className={styles.weatherInfo}>
+              <p>{weatherInfo.weatherDescription.description}</p>
+            </div>
+            <div className={styles.daylights}>
+              <div><Image src="/images/sunrise.png" width="50" height="50" /><p>{weatherInfo.daylight.sunrise}</p></div>
+              <div><Image src="/images/watch.png" width="50" height="50" /><p>{weatherInfo.daylight.time}</p></div>
+              <div><Image src="/images/sunset.png" width="50" height="50" /><p>{weatherInfo.daylight.sunset}</p></div>
+            </div>
+          </div>
+        }
       </div>
       {weatherInfo && <Footer accredit={weatherInfo.alt} />}
     </div>
